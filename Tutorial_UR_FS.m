@@ -37,27 +37,27 @@ end
 %%% Select the features using our suggested algorithms %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Now we will select the top-5 features with our Corrected-mRMR and we will 
-% compare this subsets with the subsets withour performing any correction
+% compare this subset with the subsets without performing any correction
 % and with the ideal, which is the one if we had used mRMR  the unobservable 
 % correctly reported data.
 topK=5;
 Selected_with_correctedMRMR = correctedMRMR(X_ur_data, Y_labels, topK, under_reported_features, prior_knowledge_all);
-disp('Returned subset using our Corrected-mRMR:')
+disp('Selected features using our Corrected-mRMR:')
 disp(Selected_with_correctedMRMR)
 Selected_with_no_correction_mRMR = correctedMRMR(X_ur_data, Y_labels, topK);
-disp('Returned subset using mRMR without corrected for under-reported:')
+disp('Selected features using mRMR with the under-reported features (no correction) features:')
 disp(Selected_with_no_correction_mRMR)
 Selected_with_ideal_mRMR = correctedMRMR(X_data, Y_labels, topK);
-disp('Returned subset using mRMR with the unobservable correctly reported features:')
+disp('Selected features using mRMR with the correctly reported unobserved (ideal) features:')
 disp(Selected_with_ideal_mRMR)
 
 % And the same with MIM
 Selected_with_correctedMIM = correctedMIM(X_ur_data, Y_labels, topK, under_reported_features, prior_knowledge_all);
-disp('Returned subset using our Corrected-MIM:')
+disp('Selected features using our Corrected-MIM:')
 disp(Selected_with_correctedMIM)
 Selected_with_no_correction_MIM = correctedMIM(X_ur_data, Y_labels, topK);
-disp('Returned subset using MIM without corrected for under-reported:')
+disp('Selected features using MIM with the under-reported features (no correction) features:')
 disp(Selected_with_no_correction_MIM)
 Selected_with_ideal_MIM = correctedMIM(X_data, Y_labels, topK);
-disp('Returned subset using MIM with the unobservable correctly reported features:')
+disp('Selected features using MIM with the correctly reported unobserved (ideal) features:')
 disp(Selected_with_ideal_MIM)
